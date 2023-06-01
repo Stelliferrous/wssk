@@ -1,0 +1,25 @@
+<Configuration>
+    <MappedFolders>
+        <MappedFolder>
+            <HostFolder>C:\users\%username%\Documents</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Documents</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+        <MappedFolder>
+            <HostFolder>C:\users\%username%\Downloads</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Downloads</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder> 
+        <!-- Create paths first if they don't exist -->
+        <!-- <MappedFolder> 
+            <HostFolder>C:\users\%username%\wssk\AppData\Local\Vivaldi</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\AppData\Local\Vivaldi</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder> -->
+    </MappedFolders>
+    <LogonCommand>
+        <Command>C:\Users\WDAGUtilityAccount\Documents\wssk\setup.cmd</Command>
+    </LogonCommand>
+    <ClipboardRedirection>true</ClipboardRedirection>
+    <MemoryInMB>4096</MemoryInMB>
+</Configuration>
