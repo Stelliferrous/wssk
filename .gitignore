@@ -1,4 +1,6 @@
-chocoPackages.txt
-pwshModules.txt
-wingetPackages.txt
-Microsoft.*
+*/chocoPackages.txt
+*/pwshModules.txt
+*/wingetPackages.txt
+lib/Microsoft.*
+*.wsb
+!personal.wsb

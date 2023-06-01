@@ -12,12 +12,10 @@ function wingetDownload {
         $latestReleaseTag = $wingetreleaseInfo.tag_name
         $assetUrl = ($wingetreleaseInfo.assets | Where-Object { $_.name -like "*.msixbundle" }).browser_download_url
         if ($assetUrl) {
-            $wingetFileName = "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe-$latestReleaseTag.msixbundle"
-            $result.File = $wingetFileName
-            $wingetoutputFile = Join-Path -Path $savePath -ChildPath $wingetFileName
-            if (-not (Test-Path -Path $wingetoutputFile)) {
+            $result.File = "lib\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe-$latestReleaseTag.msixbundle"
+            if (-not (Test-Path -Path $result.File)) {
                 try {
-                    Invoke-WebRequest -Uri $assetUrl -OutFile $wingetoutputFile
+                    Invoke-WebRequest -Uri $assetUrl -OutFile $result.File
                     $result.Success = $true
                     $result.Message = "Downloaded $repo release $latestReleaseTag"
                 } 
@@ -38,17 +36,18 @@ function wingetDownload {
 }
 
 function vclibsDownload {
-    $vclibsFileName = "Microsoft.VCLibs.x64.14.00.Desktop.appx"
-    $vclibsUrl = "https://aka.ms/$vclibsFileName"
     $result = @{
         Success = $false
         Message = ""
-        File = $vclibsFileName
+        File = ""
     }
+    $vclibsFileName = "Microsoft.VCLibs.x64.14.00.Desktop.appx"
+    $vclibsUrl = "https://aka.ms/$vclibsFileName"
+    $result.File = "lib\$vclibsFileName"
     
-    if (!(Test-Path $vclibsFileName)) {
+    if (!(Test-Path $result.File)) {
         try {
-            Invoke-WebRequest -Uri $vclibsUrl -OutFile $vclibsFileName
+            Invoke-WebRequest -Uri $vclibsUrl -OutFile $result.File
             $result.Success = $true
             $result.Message = "Downloaded $repo release $latestReleaseTag"
         } 

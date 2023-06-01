@@ -23,7 +23,7 @@
         </MappedFolder> -->
     </MappedFolders>
     <LogonCommand>
-        <Command>C:\Users\WDAGUtilityAccount\Documents\wssk\setup.cmd</Command>
+        <Command>C:\Users\WDAGUtilityAccount\Documents\wssk\lib\setup.cmd personal</Command>
     </LogonCommand>
     <ClipboardRedirection>true</ClipboardRedirection>
     <MemoryInMB>4096</MemoryInMB>

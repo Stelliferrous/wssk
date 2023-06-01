@@ -1,1 +1,0 @@
-"%SystemRoot%\\System32\\\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command Start-Process -wait 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' C:\\Users\\WDAGUtilityAccount\\Documents\\wssk\\setup.ps1"
