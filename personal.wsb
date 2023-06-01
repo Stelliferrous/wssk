@@ -10,6 +10,11 @@
             <SandboxFolder>C:\Users\WDAGUtilityAccount\Downloads</SandboxFolder>
             <ReadOnly>false</ReadOnly>
         </MappedFolder> 
+        <MappedFolder>
+            <HostFolder>C:\users\%username%\Documents\wssk\shortcuts</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\Shortcuts</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder> 
         <!-- Create paths first if they don't exist -->
         <!-- <MappedFolder> 
             <HostFolder>C:\users\%username%\wssk\AppData\Local\Vivaldi</HostFolder>

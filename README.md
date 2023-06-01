@@ -8,5 +8,9 @@ Steps:
 - To run just double click personal.wsb
 - Probably works
 
-Notes: This is awful, don't judge.
-TODO: Everything else
+Notes: 
+ - This is awful, don't judge. (It's slightly better now)
+
+TODO: 
+ - Create a log
+ - Everything else
