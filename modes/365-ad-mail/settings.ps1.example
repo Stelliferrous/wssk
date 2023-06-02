@@ -1,0 +1,11 @@
+pwshModules = @(
+    MSOnline
+    AzureAD
+    ExchangeOnlineManagement
+)
+
+wingetPackages = @(
+    Microsoft.PowerShell
+    7zip.7zip
+    Mozilla.Firefox # For alternate browser work
+)

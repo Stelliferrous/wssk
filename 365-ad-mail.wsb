@@ -1,0 +1,24 @@
+<Configuration>
+    <MappedFolders>
+        <MappedFolder>
+            <HostFolder>C:\users\%username%\Documents</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Documents</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+        <MappedFolder>
+            <HostFolder>C:\users\%username%\Downloads</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Downloads</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder> 
+        <MappedFolder>
+            <HostFolder>C:\users\%username%\Documents\wssk\shortcuts</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\Shortcuts</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+    </MappedFolders>
+    <LogonCommand>
+        <Command>C:\Users\WDAGUtilityAccount\Documents\wssk\lib\setup.cmd 365-ad-mail</Command>
+    </LogonCommand>
+    <ClipboardRedirection>true</ClipboardRedirection>
+    <MemoryInMB>4096</MemoryInMB>
+</Configuration>

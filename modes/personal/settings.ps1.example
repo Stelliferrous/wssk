@@ -1,0 +1,14 @@
+pwshModules = @(
+    MSOnline
+    AzureAD
+    ExchangeOnlineManagement
+)
+
+wingetPackages = @(
+    Microsoft.PowerShell
+    7zip.7zip
+)
+
+chocoPackages = @(
+    vscodium
+)

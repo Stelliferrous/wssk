@@ -4,34 +4,36 @@ param (
     [String]$mode = "personal"
 )
 
+
 Set-ExecutionPolicy Bypass
 $savePath = "C:\Users\WDAGUtilityAccount\Documents\wssk\"
+$modePath = Join-Path ".\modes\" $mode
 Set-Location $savePath
 Import-Module .\lib\functions.ps1
+Import-Module $modePath\settings.ps1
 
-$pwshModules = (Join-Path $mode "\pwshModules.txt")
-if (Test-Path $pwshModules) {
-    foreach ($line in Get-Content $pwshModules) {
+if ($pwshModules) {
+    foreach ($line in $pwshModules) {
         Install-Module $line -Force
         Write-Host("Installed $line")
     }
 }
-$wingetPackages = (Join-Path $mode "\wingetPackages.txt")
-if (Test-Path $wingetPackages) {
+
+if ($wingetPackages) {
     $wingetInstallResults = wingetInstall
     if ($wingetInstallResults.Success) {
-        foreach ($line in Get-Content $wingetPackages) {
+        foreach ($line in $wingetPackages) {
             winget install $line --accept-package-agreements --accept-source-agreements
         }
     } else {
         Write-Host($wingetInstallResults.Message)    
     }
 }
-$chocoPackages = Join-Path $mode "\chocoPackages.txt"
-if (Test-Path $chocoPackages) {
+
+if ($chocoPackages) {
     $chocolateyInstallResults = chocolateyInstall
     if ($chocolateyInstallResults.Success) {
-        foreach ($line in Get-Content $chocoPackages) {
+        foreach ($line in $chocoPackages) {
             choco install $line -y
         }
     } else {

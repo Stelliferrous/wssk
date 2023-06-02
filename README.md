@@ -14,3 +14,15 @@ Notes:
 TODO: 
  - Create a log
  - Everything else
+
+Shortcuts:
+ - Gets placed on the desktop
+ - The idea is to use them for ad-hoc installers or anything that may need to be done after the initial boot
+ - Should always call the functions library to keep things tidy
+
+Modes:
+ - Modes are the Presets
+ - Create a wsb and directory under modes with the same name.
+ - Create a 'settings.ps1' in the mode directory with the packages you want.
+
+I'll happily accept a Pull Request with changes or ideas, or new mode presets, etc.

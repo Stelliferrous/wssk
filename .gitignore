@@ -1,6 +1,5 @@
-*/chocoPackages.txt
-*/pwshModules.txt
-*/wingetPackages.txt
+modes/*/settings.ps1
 lib/Microsoft.*
 *.wsb
 !personal.wsb
+!365-ad-mail.wsb
