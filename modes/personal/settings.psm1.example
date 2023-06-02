@@ -13,6 +13,33 @@ $chocoPackages = @(
     "vscodium"
 )
 
+$regHacks = @(
+    @{ 
+        path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
+        name = "BingSearchEnabled"
+        value = 0
+        restart = $false
+    }
+    @{ 
+        path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
+        name = "SearchboxTaskbarMode"
+        value = 0
+        restart = $false
+    }
+    @{ 
+        path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\SearchSettings"
+        name = "IsDynamicSearchBoxEnabled"
+        value = 0
+        restart = $false
+    }
+    @{ 
+        path = "HKCU:\Software\Policies\Microsoft\Windows\Explorer"
+        name = "DisableSearchBoxSuggestions"
+        value = 1
+        restart = $true
+    }
+)
+
 function loadSettingsVars {
     $result = @{
         pwshModules = $pwshModules

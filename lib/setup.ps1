@@ -13,6 +13,19 @@ Import-Module -Name $modePath\settings
 
 $settings = loadSettingsVars
 
+if ($settings.regHacks) {
+    $explorerRestart = $false
+    foreach ($hack in $settings.regHacks) {
+        registryEditor -regPath $hack.path -regName $hack.name -regValue $hack.value
+        if ($hack.restart) {
+            $explorerRestart = $true
+        }
+    }
+    if ($explorerRestart) {
+        explorerRestart
+    }
+}
+
 if ($settings.pwshModules) {
     $nugetInstallResults = nugetInstall
     if ($nugetInstallResults.Success) {

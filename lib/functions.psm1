@@ -80,7 +80,6 @@ function vclibsInstall {
     } else {
         $vclibsResult.Success = $false
         $vclibsResult.Message = $vclibsDownloadResults.Message
-        # Write-Host("Failed: $($vclibsDownloadResults.Message)")
     }
     return $vclibsResult
 }
@@ -149,4 +148,33 @@ function chocolateyInstall {
         }
     }
     return $chocoResult
+}
+
+function explorerRestart {
+    Get-Process explorer | ForEach-Object {
+        $_ | Stop-Process
+        $_.WaitForExit(5000)
+        if (-not $_.HasExited) {
+            $_ | Stop-Process -Force
+        }
+    }
+    Start-Process explorer
+}
+
+function registryEditor {
+    param (
+        [Parameter(Mandatory = $true)]
+        [String]$regPath,
+        [Parameter(Mandatory = $true)]
+        [String]$regName,
+        [Parameter(Mandatory = $true)]
+        [String]$regValue,
+        [Parameter(Mandatory = $false)]
+        [Boolean]$restartExplorer = $false
+    )
+    if (!(Test-Path $regPath)) {
+        New-Item -Path $regPath
+    }
+    Set-ItemProperty -Path $regPath -Name $regName -Value $regValue
+    
 }
