@@ -167,14 +167,14 @@ function registryEditor {
         [String]$regPath,
         [Parameter(Mandatory = $true)]
         [String]$regName,
-        [Parameter(Mandatory = $true)]
-        [String]$regValue,
         [Parameter(Mandatory = $false)]
-        [Boolean]$restartExplorer = $false
+        [String]$regType = "DWORD",
+        [Parameter(Mandatory = $true)]
+        [String]$regValue
     )
     if (!(Test-Path $regPath)) {
-        New-Item -Path $regPath
+        New-Item -Path $regPath -Force
     }
-    Set-ItemProperty -Path $regPath -Name $regName -Value $regValue
+    Set-ItemProperty -Path $regPath -Name $regName -Value $regValue -Type $regType
     
 }

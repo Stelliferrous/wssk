@@ -15,28 +15,49 @@ $chocoPackages = @(
 
 $regHacks = @(
     @{ 
-        path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
+        path = "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search"
         name = "BingSearchEnabled"
-        value = 0
-        restart = $false
+        value = "0"
     }
     @{ 
-        path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
+        path = "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search"
         name = "SearchboxTaskbarMode"
-        value = 0
-        restart = $false
+        value = "0"
     }
     @{ 
-        path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\SearchSettings"
+        path = "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SearchSettings"
         name = "IsDynamicSearchBoxEnabled"
-        value = 0
-        restart = $false
+        value = "0"
     }
     @{ 
-        path = "HKCU:\Software\Policies\Microsoft\Windows\Explorer"
+        path = "Registry::HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer"
         name = "DisableSearchBoxSuggestions"
-        value = 1
+        value = "1"
         restart = $true
+    }
+    @{ 
+        path = "Registry::HKEY_CLASSES_ROOT\.ps1"
+        name = "(default)"
+        value = 'PS.ps1'
+        type = "String"
+    }
+    @{ 
+        path = "Registry::HKEY_CLASSES_ROOT\PS.ps1"
+        name = "(default)"
+        value = 'File .ps1'
+        type = "String"
+    }
+    @{ 
+        path = "Registry::HKEY_CLASSES_ROOT\PS.ps1\Shell\Open"
+        name = "FriendlyAppName"
+        value = 'PS'
+        type = "String"
+    }
+    @{ 
+        path = "Registry::HKEY_CLASSES_ROOT\PS.ps1\Shell\Open\Command"
+        name = "(default)"
+        value = '"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" "%1"'
+        type = "String"
     }
 )
 

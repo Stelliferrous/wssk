@@ -16,7 +16,12 @@ $settings = loadSettingsVars
 if ($settings.regHacks) {
     $explorerRestart = $false
     foreach ($hack in $settings.regHacks) {
-        registryEditor -regPath $hack.path -regName $hack.name -regValue $hack.value
+        $parameters = @{}
+        if ($hack.value) {$parameters['regValue'] = $hack.value}
+        if ($hack.path) {$parameters['regPath'] = $hack.path}
+        if ($hack.name) {$parameters['regName'] = $hack.name}
+        if ($hack.type) {$parameters['regType'] = $hack.type}
+        registryEditor @parameters
         if ($hack.restart) {
             $explorerRestart = $true
         }
