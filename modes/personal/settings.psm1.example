@@ -1,0 +1,23 @@
+$pwshModules = @(
+    "MSOnline"
+    "AzureAD"
+    "ExchangeOnlineManagement"
+)
+
+$wingetPackages = @(
+    "Microsoft.PowerShell"
+    "7zip.7zip"
+)
+
+$chocoPackages = @(
+    "vscodium"
+)
+
+function loadSettingsVars {
+    $result = @{
+        pwshModules = $pwshModules
+        wingetPackages = $wingetPackages
+        chocoPackages = $chocoPackages
+    }
+    return $result
+}

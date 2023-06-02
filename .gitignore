@@ -1,4 +1,4 @@
-modes/*/settings.ps1
+modes/*/settings.psm1
 lib/Microsoft.*
 *.wsb
 !personal.wsb

@@ -4,8 +4,8 @@
 
 Steps: 
 - Download this to Documents\wssk
-- Rename any .examples to .txt to enable those installers
-- To run just double click personal.wsb
+- Rename any .examples or create new ones to enable those installers
+- To run just double click *.wsb to launch it
 - Probably works
 
 Notes: 
@@ -23,6 +23,6 @@ Shortcuts:
 Modes:
  - Modes are the Presets
  - Create a wsb and directory under modes with the same name.
- - Create a 'settings.ps1' in the mode directory with the packages you want.
+ - Create a 'settings.psm1' in the mode directory with the packages you want.
 
 I'll happily accept a Pull Request with changes or ideas, or new mode presets, etc.
